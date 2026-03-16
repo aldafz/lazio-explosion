@@ -1,25 +1,55 @@
-"use client";
-import React from 'react';
-import Navigation from '../components/Navigation';
-import Hero from '../components/Hero';
-import HallOfFame from '../components/HallOfFame';
-import BestEleven from '../components/BestEleven';
-import Voting from '../components/Voting';
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.S. Lazio Ultimate Explosion 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-export default function Home() {
-  return (
-    <main className="scroll-smooth bg-black min-h-screen">
-      <Navigation />
-      <Hero />
-      <div className="space-y-0">
-        <HallOfFame />
-        <BestEleven />
-        <Voting />
-      </div>
-      
-      <footer className="py-10 bg-black text-center border-t border-[#87D3F8]/10 text-white/40 text-xs uppercase tracking-widest px-8">
-        S.S. LAZIO 1900 - UNOFFICIAL SITE
-      </footer>
-    </main>
-  );
-}
+    <nav>
+        <a href="#news">News</a>
+        <a href="#best11">Best 11</a>
+        <a href="#world11">World Lazio</a>
+        <a href="#tactics">Tattiche</a>
+        <a href="#choreo">Coreografie</a>
+        <a href="#chants">Cori</a>
+    </nav>
+
+    <section id="news">
+        <h1 class="giant-title">SS LAZIO NEWS 2026</h1>
+        <div class="news-ticker">
+            <div class="giant-btn red">LIVE: LAZIO-ROMA 2-0</div>
+            <div class="giant-btn blue">STADIO FLAMINIO: PROGETTO APPROVATO</div>
+            <div class="giant-btn green">CHAMPIONS LEAGUE: SORTEGGI DOMANI</div>
+        </div>
+    </section>
+
+    <section id="best11">
+        <h2>VOTA IL TUO BEST 11 STORICO</h2>
+        <p>Scegli tra i 10 candidati per ogni ruolo</p>
+        <div id="voting-container" class="grid-container"></div>
+    </section>
+
+    <section id="world11">
+        <h2>LAZIO WORLD DREAM TEAM</h2>
+        <p>Inserisci campioni mondiali per vederli in biancoceleste</p>
+        <div class="input-group">
+            <input type="text" id="world-input" placeholder="Esempio: Pelé, Maradona, Messi...">
+            <button class="giant-btn blue" onclick="addWorldStar()">ACQUISTA</button>
+        </div>
+        <div id="world-squad" class="grid-container"></div>
+    </section>
+
+    <section id="tactics">
+        <h2>CONFRONTO TATTICO STORICO</h2>
+        <div id="tactics-container" class="grid-container"></div>
+    </section>
+
+    <section id="choreo">
+        <h2>COREOGRAFIE CURVA NORD</h2>
+        <div id="choreo-grid" class="grid-container"></div>
+        <div class="stats-panel">
+            <h3>CLASSIFICA COREOGRAFIE (VOTI LIVE)</h3>
+            <div id="choreo-results"></div>
