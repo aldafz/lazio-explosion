@@ -1,25 +1,42 @@
-"use client";
-import React from 'react';
-import Navigation from '../components/Navigation';
-import Hero from '../components/Hero';
-import HallOfFame from '../components/HallOfFame';
-import BestEleven from '../components/BestEleven';
-import Voting from '../components/Voting';
-
-export default function Home() {
-  return (
-    <main className="scroll-smooth bg-black min-h-screen">
-      <Navigation />
-      <Hero />
-      <div className="space-y-0">
-        <HallOfFame />
-        <BestEleven />
-        <Voting />
-      </div>
-      
-      <footer className="py-10 bg-black text-center border-t border-[#87D3F8]/10 text-white/40 text-xs uppercase tracking-widest px-8">
-        S.S. LAZIO 1900 - UNOFFICIAL SITE
-      </footer>
-    </main>
-  );
+:root {
+    --lazio-blue: #87D3F8;
+    --lazio-dark: #0056b3;
+    --white: #ffffff;
+    --gold: #d4af37;
 }
+
+body { font-family: 'Arial Black', sans-serif; margin: 0; scroll-behavior: smooth; background: #f4f7f8; color: #333; overflow-x: hidden; }
+
+nav { position: fixed; top: 0; width: 100%; background: var(--lazio-dark); display: flex; justify-content: center; gap: 10px; padding: 15px 0; z-index: 1000; flex-wrap: wrap; }
+nav a { color: white; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: bold; }
+
+section { min-height: 100vh; padding: 100px 20px; display: flex; flex-direction: column; align-items: center; border-bottom: 5px solid var(--lazio-blue); }
+
+.giant-title { font-size: clamp(2rem, 8vw, 4rem); color: var(--lazio-dark); text-shadow: 2px 2px var(--lazio-blue); text-align: center; }
+
+.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1200px; margin-top: 30px; }
+
+.card { background: white; border-radius: 20px; padding: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+.card:hover { transform: translateY(-10px); }
+.card img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px; background: #eee; }
+
+.giant-btn { padding: 20px 30px; border: none; border-radius: 15px; cursor: pointer; font-weight: bold; font-size: 1.1rem; transition: 0.3s; margin: 5px; }
+.giant-btn:hover { transform: scale(1.1); filter: brightness(1.2); }
+
+.red { background: #ff4757; color: white; }
+.blue { background: var(--lazio-blue); color: var(--lazio-dark); }
+.green { background: #2ed573; color: white; }
+.gold { background: var(--gold); color: black; }
+.sky { background: #add8e6; }
+.eagle { background: #2f3542; color: white; }
+
+.stats-panel { background: white; margin-top: 40px; padding: 25px; border-radius: 20px; width: 100%; max-width: 500px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+.result-row { display: flex; justify-content: space-between; border-bottom: 1px solid #eee; padding: 10px 0; font-size: 1.1rem; }
+
+.playing { animation: pulse-border 1s infinite; }
+@keyframes pulse-border {
+    0% { box-shadow: 0 0 0 0px var(--gold); }
+    100% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+}
+
+.input-group input { padding: 15px; border-radius: 10px; border: 2px solid var(--lazio-blue); width: 250px; font-size: 1rem; }
